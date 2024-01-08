@@ -90,7 +90,28 @@ endfunction()
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+        headers/Card.h
+        headers/Suite.h
+        headers/Gender.h
+        src/Card.cpp
+        headers/Deck.h
+        src/Deck.cpp
+        headers/DeckHidden.h
+        src/DeckHidden.cpp
+        headers/DeckBreeder.h
+        src/DeckBreeder.cpp
+        headers/DeckDescender.h
+        src/DeckDescender.cpp
+        headers/Matchdif.h
+        headers/Game.h
+        src/Game.cpp
+        headers/Exception.h
+        headers/Vector.h
+        src/Vector.cpp
+        headers/List.h
+        src/List.cpp
+)
 
 ###############################################################################
 
