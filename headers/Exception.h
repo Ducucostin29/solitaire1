@@ -20,7 +20,7 @@ private:
     T message;
 };
 
-class ExceptionOutOfDeck : public std::exception{
+class [[maybe_unused]] ExceptionOutOfDeck : public std::exception{
 public:
     [[nodiscard]] const char* what() const noexcept override;
 };

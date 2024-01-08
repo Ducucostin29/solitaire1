@@ -3,6 +3,6 @@
 //
 #include "../headers/Exception.h"
 
-const char  *ExceptionOutOfDeck::what() const noexcept {
+[[maybe_unused]]const char  *ExceptionOutOfDeck::what() const noexcept {
     return "Object is out of deck";
 }
