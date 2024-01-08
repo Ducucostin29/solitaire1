@@ -20,4 +20,9 @@ private:
     T message;
 };
 
+class ExceptionOutOfDeck : public std::exception{
+public:
+    [[nodiscard]] const char* what() const noexcept override;
+};
+
 #endif //OOP_EXCEPTION_H

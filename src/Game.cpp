@@ -113,8 +113,8 @@ void Game::MoveCard() {
         int whereFrom;
         std::cin >> whereFrom;
 
-        if (whereFrom < 1) throw Exception<char*>((char *) "Deck selected too small. The number must be greater than 0");
-        if (whereFrom > 7) throw Exception<char*>((char *) "Deck selected too large. The number must be less than 8");
+        if (whereFrom < 1) throw ExceptionOutOfDeck();
+        if (whereFrom > 7) throw ExceptionOutOfDeck();
 
         std::cout << "Select where to move: " << std::endl;
         int unde;
@@ -130,10 +130,10 @@ void Game::MoveCard() {
                 std::cout << "The card was moved successfully " << std::endl;
                 std::cout << *this;
             } else {
-                throw Exception((char*) "You can not \n");
+                throw ExceptionOutOfDeck();
             }
         } else {
-            throw Exception((char*) "Invalid deck type selected\n");
+            throw ExceptionOutOfDeck();
         }
     } catch (Exception<char*>& err) {
         std::cout << "ERROR =" << err.display();
