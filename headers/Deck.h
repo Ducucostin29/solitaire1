@@ -23,7 +23,7 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Deck &deck) {
         out << deck.Name << " "<< deck.Index+1 << std::endl;
 
-        for (auto card : deck.cards)
+        for (auto const card : deck.cards)
             out << " " << *card;
 
         return out;
