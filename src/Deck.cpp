@@ -5,8 +5,8 @@
 #include "../headers/Deck.h"
 
     Deck::~Deck(){
-        for(size_t i=0;i< this->cards.size();i++)
-            delete this->cards[i];
+        for(auto & card : this->cards)
+            delete card;
 }
     bool Deck::addcard(Card *card) {
         if(validation(card)){

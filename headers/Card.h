@@ -7,7 +7,6 @@
 #include <ostream>
 #include <string>
 #include <sstream>
-#include <wabtags.h>
 #include "Suite.h"
 #include "Gender.h"
 

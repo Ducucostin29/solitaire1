@@ -45,7 +45,8 @@ public:
     bool empty(){
         return this->n==0;
     }
-    T back(){
+
+    [[maybe_unused]] T back(){
         if(this->empty())throw Exception<char*>((char*) "Impossiblel \n");
         return this->point[n-1];
     }

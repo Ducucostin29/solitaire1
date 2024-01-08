@@ -8,7 +8,7 @@
 #include "Card.h"
 #include <string>
 #include <vector>
-//#include "VectorM.h"
+#include "Vector.h"
 
 
 class Deck {
@@ -23,8 +23,8 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Deck &deck) {
         out << deck.Name << " "<< deck.Index+1 << std::endl;
 
-        for (size_t i=0; i< deck.cards.size(); i++)
-            out << " " << *deck.cards[i];
+        for (auto card : deck.cards)
+            out << " " << *card;
 
         return out;
     }

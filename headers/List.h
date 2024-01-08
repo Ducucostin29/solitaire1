@@ -19,7 +19,7 @@ public:
 };
 
 
-template <typename T>class List {
+template <typename T>class [[maybe_unused]] List {
 private:
     Node<T>* start;
     Node<T>* end;
@@ -36,7 +36,8 @@ public:
     bool empty(){
         return this->n==0;
     }
-    void push_back(T obj){
+
+    [[maybe_unused]] void push_back(T obj){
         if(end== nullptr){
             this->start=new Node<T>(obj);
             this->end=this->start;
@@ -77,12 +78,12 @@ public:
         throw Exception<char*>((char*) "Impossible \n");
     }
 
-    T back(){
+    [[maybe_unused]] T back(){
         if(this->empty())throw Exception<char*>((char*) "Impossible \n");
         return this->end->value;
     }
 
-    [[nodiscard]] size_t size() const {
+    [[maybe_unused]] [[nodiscard]] size_t size() const {
         return this->n;
     }
 
