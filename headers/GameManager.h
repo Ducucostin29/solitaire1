@@ -6,13 +6,13 @@
 #define OOP_GAMEMANAGER_H
 
 #include "Game.h"
+#include <memory>
 
 
 class GameManager {
 public:
-    ~GameManager(){
-        delete game;
-    }
+
+    GameManager() : game(std::make_unique<Game>()) {}
 
     static GameManager& getInstance(){
         static GameManager instance;
@@ -20,11 +20,14 @@ public:
     }
 
     [[nodiscard]] Game* getGame() const{
-        return game;
+        return game.get();
     }
+
+    GameManager(const GameManager&) = delete;
+    GameManager& operator=(const GameManager&) = delete;
+
 private:
-    Game *game;
-    GameManager() : game(new Game()){}
+    std::unique_ptr<Game> game;
 };
 
 
