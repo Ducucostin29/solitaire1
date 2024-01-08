@@ -7,6 +7,7 @@
 
 #include <exception>
 
+///Template pentr custom exception
 template <typename  T> class Exception : public std::exception{
 public:
     explicit Exception(T msg){
@@ -17,6 +18,11 @@ public:
     }
 private:
     T message;
+};
+
+class ExceptionOutOfDeck : public std::exception{
+public:
+    [[nodiscard]] const char* what() const noexcept override;
 };
 
 #endif //OOP_EXCEPTION_H

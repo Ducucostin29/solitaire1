@@ -10,9 +10,12 @@
 
 class DeckBreeder: public Deck{
 public:
+    ///Constructorul clasei
     explicit DeckBreeder(Suite color,int index): Deck("breeder",index,13){
         this->color = color;
     }
+
+    ///Fuctia vituala completed fiind definita in clasa Deck si arta daca un deck crescator s-a completat
     bool completed() override {
             if(!Deck::completed()) return false;
 
@@ -22,9 +25,11 @@ public:
             }
             return true;
     }
-
+///Atributele clasei
 protected:
     Suite color;
+
+    ///Functia validation care pune carte peste carte in deck-urile cresacatoare
     bool validation(Card *cart) override{
         if (this->color != cart->getSuite())return false;
 

@@ -43,6 +43,7 @@ void Game::GameInitialization() {
     for (long long unsigned int i = c; i < cardsGameRandom.size(); i++) {
         cardsGameRandom[i]->Flip();
         this->hidden->Deck::addcard(cardsGameRandom[i]);
+
     }
 }
 
@@ -144,8 +145,8 @@ void Game::MoveCard2(){
         int putFrom;
         std::cin >> putFrom;
 
-        if (putFrom < 1)throw Exception<char*>((char *) "Deck selected too small. The number must be greater than 0");
-        if (putFrom > 4) throw Exception<char*>((char *) "Deck selected too large. The number must be less than 8");
+        if (putFrom < 1)throw ExceptionOutOfDeck();
+        if (putFrom > 4) throw ExceptionOutOfDeck();
 
         std::cout << "select deck where to put card" << std::endl;
         int where;
@@ -159,10 +160,10 @@ void Game::MoveCard2(){
                 std::cout << "The card was moved successfully  " << std::endl;
                 std::cout << this;
             } else {
-                throw Exception<char*>((char*) "You can not \n");
+                throw ExceptionOutOfDeck();
             }
         } else {
-            throw Exception<char*>((char*) "Invalid deck type selected\n");
+            throw ExceptionOutOfDeck();
         }
     } catch (Exception<char*>& err) {
         std::cout << "ERROR =" << err.display();

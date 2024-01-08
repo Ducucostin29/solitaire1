@@ -8,6 +8,7 @@
 #include "Suite.h"
 #include "Gender.h"
 
+///Functie care arata daca cartile au culoare si atributul diferit
 static bool matchOpus(Suite color, Suite match) {
     if (color <= 1 && match >= 2) return true;
     if (color >= 2 && match <= 1) return true;

@@ -8,14 +8,13 @@
 
 class DeckHidden: public Deck{
 public:
+    ///Construcorul clasei
     DeckHidden(): Deck("hidden",0,0){}
 
 protected:
-
-    bool validation(Card*)override{
-        return true;
-    }
+    ///Functia validation care defineste Deck-ul ascuns
+    bool validation(Card* )override{
+        return true;}
 };
-
 
 #endif //OOP_DECKHIDDEN_H

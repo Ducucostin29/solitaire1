@@ -15,21 +15,26 @@ class Deck {
 public:
     ///Constructor parametrizat al clasei Deck
     Deck(const char *name, int index, unsigned long long int cardsneedwin):Name(name),Index(index),CardsNeedWin(cardsneedwin){}
-    ///Destructor
+
+    ///Destructor virtual
     virtual ~Deck();
+
     ///Functie care adauga carti la final
     bool addcard(Card *card);
+
     ///Supraincarcarea operatorului "<<"
     friend std::ostream &operator<<(std::ostream &out, const Deck &deck) {
         out << deck.Name << " "<< deck.Index+1 << std::endl;
 
-        for (auto const card : deck.cards)
-            out << " " << *card;
+        for (size_t i=0; i< deck.cards.size(); i++)
+            out << " " << *deck.cards[i];
 
         return out;
     }
+
     ///Functie care decide daca jocul s-a termina
     virtual bool completed();
+
     ///Functie care da ultima carte
     Card *givelastcard(){
         if(this->cards.empty()) {return nullptr;}

@@ -14,12 +14,16 @@ class Card {
 public:
     ///Constructor parametrizat al clasei Card
     Card(Suite suit, CardGender gender, bool bookup): suit(suit), gender(gender), BookUp(bookup){}
+
     ///Getter pentru gender
     CardGender getGender();
+
     ///Getter pentru suita
     Suite getSuite();
+
     ///Functie ce intoarce cartea cu fata in jos
     void Flip();
+
     ///Supraincarcarea operatorului "<<"
     friend std::ostream &operator<<(std::ostream &out, const Card &card) {
 
@@ -34,6 +38,7 @@ public:
         out << str.str() ;
         return out;
     }
+
 ///Atributele clasei
 private:
     Suite suit;

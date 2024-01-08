@@ -8,6 +8,7 @@
 #include <ostream>
 #include "Exception.h"
 
+///Template pentru Vector
 template <typename  T>class Vector {
 private:
     T* point;

@@ -17,10 +17,11 @@
 
 class Game {
 public:
+    ///Constructorul clasei
     explicit Game() {
         this->GameInitialization();
     }
-
+    ///Destructorul clasei
     ~Game() {
         delete this->hidden;
         for (int i = 0; i < 4; i++)
@@ -29,8 +30,11 @@ public:
             delete this->desc[i];
 
     }
+
+    ///Functie care reda toate Deck-urile si le initializeaza
     void GameInitialization();
 
+    ///Supraincarcarea operatorului "<<"
     friend std::ostream &operator<<(std::ostream &out, const Game &game) {
         out << "Game: " << std::endl;
         out << *game.hidden;
@@ -41,12 +45,16 @@ public:
         return out;
     }
 
+    ///Functie pentru a ordona cartile random
     static std::vector<Card *> Random(std::vector<Card *> const &v);
 
+    ///Functie care arata daca jocul este terminat
     bool Win();
 
+    ///Functie care misca cartile
     void Moves();
 
+    ///Atributele clasei
 private:
     DeckHidden *hidden{};
     Vector<DeckBreeder *> breed;

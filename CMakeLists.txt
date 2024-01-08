@@ -111,6 +111,9 @@ add_executable(${PROJECT_NAME} main.cpp
         src/Vector.cpp
         headers/List.h
         src/List.cpp
+        headers/GameManager.h
+        src/GameManager.cpp
+        src/Exception.cpp
 )
 
 ###############################################################################

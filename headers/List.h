@@ -8,6 +8,7 @@
 #include "Exception.h"
 #include <ostream>
 
+///Template pentru Lista
 template <typename T> class Node {
 public:
     Node<T> * next;
